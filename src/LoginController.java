@@ -48,33 +48,7 @@ public class LoginController implements Initializable {
     @FXML
     PasswordField password;
 
-    /*
-    public void login(Event e) {
-        try {
-
-            if (username.getText().trim().matches("[aA]dmin") && password.getText().equals("123")) {
-                Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
-                Scene scene = new Scene(root,width,height-60);
-                //e.getSource to get the source which clicked on it (Button) but i stored it as Node because every parent
-                //or children in Node
-                Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                stage.setTitle("The Main");
-
-                //to open the MenuMain window in the center
-                Rectangle2D rd = Screen.getPrimary().getBounds();
-                stage.setX((rd.getWidth() - stage.getWidth()) / 2);
-                stage.setY((rd.getHeight() - stage.getHeight()) / 2);
-
-            } else {
-                JOptionPane.showMessageDialog(null, "تحقق من اسم المستخدم وكلمة المرور");
-            }
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
-        }
-
-    }*/
-
+   
     public void enter(ActionEvent e) throws IOException {
 
         List<Admins> list = AdminsDB.getAdmins(); // from mysql
@@ -123,28 +97,6 @@ public class LoginController implements Initializable {
             System.out.println("Make Sure the Login Name and Password Are Correct");
         }
     }
-
-   /* public void signUp(ActionEvent e)throws IOException{
-        String name = newN.getText();
-        String pass = newP.getText();
-        Admins adm = new Admins();
-        adm.setUsername(name);
-        adm.setPassword(pass);
-        int status = AdminsDB.signUp(adm);
-        if(status>0){
-                   Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                   alert.setTitle("Sign Up");
-                   alert.setHeaderText("Information Dialog");
-                   alert.setContentText("Signed Up successfully");
-                   alert.showAndWait();
-               }else{
-                   Alert alert = new Alert(Alert.AlertType.ERROR);
-                   alert.setTitle("Sign Up");
-                   alert.setHeaderText("ERROR");
-                   alert.setContentText("Sorry! Can't Create New Account");
-                   alert.showAndWait();
-               }
-    }*/
 
     public void signUp2() {
 
